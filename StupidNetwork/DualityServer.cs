@@ -155,6 +155,10 @@ namespace StupidNetwork
         {
             var token = e.UserToken as UserInfo;
             SocketAsyncEventArgs dest;
+            if (token.Room == null)
+            {
+                return;
+            }
             if (token.Room.player1 == e)
             {
                 dest = token.Room.player2;
