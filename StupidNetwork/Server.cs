@@ -118,6 +118,12 @@ namespace StupidNetwork
         protected void Send(string data, SocketAsyncEventArgs e)
         {
             var token = e.UserToken as UserInfo;
+            if (token.Socket == null)
+            {
+                Console.WriteLine("Null socket");
+                return;
+            }
+
             var buffer = Encoding.ASCII.GetBytes(data);
             token.Socket.Send(buffer);
             Console.WriteLine($"Sent : {data}");

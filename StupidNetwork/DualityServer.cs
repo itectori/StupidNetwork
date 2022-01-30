@@ -131,7 +131,7 @@ namespace StupidNetwork
             {
                 return;
             }
-            
+
             var p1 = waitingLoby[loby];
             var p2 = e;
             var token1 = p1.UserToken as UserInfo;
